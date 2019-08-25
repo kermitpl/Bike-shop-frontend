@@ -1,0 +1,26 @@
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto"> Bike Details</h2>
+  <button class="btn btn-danger" style="width:100px" (click)="addBike()"> Add Bike</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Size</th>
+      <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bike of bikes">
+      <td class="hidden">{{bike.id}}</td>
+      <td>{{bike.manufacturer}}</td>
+      <td>{{bike.model}}</td>
+      <td>{{bike.size}}</td>
+      <td>{{bike.year}}</td>
+      <td><button class="btn btn-success" (click)="deleteBike(bike)"> Delete</button>
+        <button class="btn btn-success" (click)="editBike(bike)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

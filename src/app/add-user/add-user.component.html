@@ -1,0 +1,26 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+      <div class="error" *ngIf="addForm.controls['name'].hasError('required') && addForm.controls['name'].touched">Username is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password: (at least 6 characters)</label>
+      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+      <div class="error" *ngIf="addForm.controls['password'].hasError('required') && addForm.controls['password'].touched">Password is required</div>
+      <div class="error" *ngIf="addForm.controls['password'].hasError('minlength') && addForm.controls['password'].touched">Password must be at least 6 characters long</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+      <div class="error" *ngIf="addForm.controls['email'].hasError('required') && addForm.controls['email'].touched">Email is required</div>
+      <div class="error" *ngIf="addForm.controls['email'].hasError('email') && addForm.controls['email'].touched">Email must be valid email address</div>
+    </div>
+
+    <button class="btn btn-success">Register</button>
+  </form>
+</div>

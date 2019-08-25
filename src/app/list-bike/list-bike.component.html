@@ -1,0 +1,44 @@
+<div class="col-md-6 user-container">
+
+  <h2 style="margin: auto"> Bike Details</h2>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" style="alignment: center">
+      <tr>
+        <td><button class="btn btn-success" (click)="refresh()"> Refresh</button></td>
+        <td><input type="number" formControlName="year" placeholder="year" name="year" class="form-control" id="year"></td>
+        <td><button class="btn btn-success" (click)="onSubmit1()"> Filter</button></td>
+        <td><input type="number" formControlName="size" placeholder="size" name="size" class="form-control" id="size"></td>
+        <td><button class="btn btn-success" (click)="onSubmit2()"> Filter</button></td>
+        <td><input type="text" formControlName="model" placeholder="model" name="model" class="form-control" id="model"></td>
+        <td><button class="btn btn-success" (click)="onSubmit3()"> Filter</button></td>
+        <td><input type="text" formControlName="manufacturer" placeholder="manufacturer" name="manufacturer" class="form-control" id="manufacturer"></td>
+        <td><button class="btn btn-success" (click)="onSubmit4()"> Filter</button></td>
+
+
+      </tr>
+    </div>
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Size</th>
+      <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bike of bikes">
+      <td class="hidden">{{bike.id}}</td>
+      <td>{{bike.manufacturer}}</td>
+      <td>{{bike.model}}</td>
+      <td>{{bike.size}}</td>
+      <td>{{bike.year}}</td>
+      <td><button class="btn btn-success" (click)="buyBike(bike)"> Buy!</button>
+    </tr>
+    </tbody>
+  </table>
+</div>

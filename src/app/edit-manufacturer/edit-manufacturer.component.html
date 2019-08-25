@@ -1,0 +1,28 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit Bike</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <label for="id">ID:</label>
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id" readonly="true">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="origin">Origin:</label>
+      <input type="text" formControlName="origin" placeholder="origin" name="origin" class="form-control" id="origin">
+    </div>
+
+    <div class="form-group">
+      <label for="founded">Founded:</label>
+      <input type="number" formControlName="founded" placeholder="founded" name="founded" class="form-control" id="founded">
+    </div>
+
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
+

@@ -1,0 +1,21 @@
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto"> Manufacturer Details</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Name</th>
+      <th>Origin</th>
+      <th>Founded</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let manufacturer of manufacturers">
+      <td class="hidden">{{manufacturer.id}}</td>
+      <td>{{manufacturer.name}}</td>
+      <td>{{manufacturer.origin}}</td>
+      <td>{{manufacturer.founded}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

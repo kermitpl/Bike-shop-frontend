@@ -1,0 +1,27 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit User</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <label for="id">ID:</label>
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id" readonly="true">
+    </div>
+    <div class="hidden">
+      <label for="role">Role:</label>
+      <input type="text" formControlName="role" placeholder="role" name="role" class="form-control" id="role">
+    </div>
+    <div class="form-group">
+      <label for="email">User Email:</label>
+      <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email" >
+      <div class="error" *ngIf="editForm.controls['email'].hasError('required') && editForm.controls['email'].touched">Email is required</div>
+      <div class="error" *ngIf="editForm.controls['email'].hasError('email') && editForm.controls['email'].touched">Email must be valid email address</div>
+    </div>
+    <div class="form-group">
+      <label for="name">User Name:</label>
+      <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name" >
+      <div class="error" *ngIf="editForm.controls['name'].hasError('required') && editForm.controls['name'].touched">Username is required</div>
+    </div>
+
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

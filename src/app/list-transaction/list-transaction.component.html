@@ -1,0 +1,25 @@
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto"> Transaction Details</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>User</th>
+      <th>Model</th>
+      <th>Quantity</th>
+      <th>PaymentType</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tran of transactions">
+      <td class="hidden">{{tran.id}}</td>
+      <td>{{tran.user}}</td>
+      <td>{{tran.model}}</td>
+      <td>{{tran.quantity}}</td>
+      <td>{{tran.paymentType}}</td>
+      <td><button class="btn btn-success" (click)="deleteTran(tran)"> Delete</button>
+        <button class="btn btn-success" (click)="editTran(tran)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
